@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <!--The page is split into two containers "controls" and the "field" -->
+    <div id="game-container">
+        <div id="game-controls-container">
+            <div id="game-controls">
+               <div id="game-start-container">
+                <button type="button" onclick= "gameStart()" id="game-starter">New game</button>
+
+               </div>
+               <div id="input-container" >
+                <input type="text" id="player-number" value="How many players?">
+                <button type="button" onclick="submit()" id="input-submitter">
+                    Submit
+                </button>
+
+               </div>
+            </div>
+            <div id="instructions-container">
+                <p>Welcome to Black Dice, version 2.0! </p>
+                <p>Here is how to play Black Dice and win the game:</p>
+                <p><ul>
+                    <li>Click the "New game" button to start a new game</li>
+                    <li>The input bar will show up, type in the number of players that are playing and click "Submit"</li>
+                    <li>Maximum of 4 players and minimum of 1</li>
+                    <li>When it's your turn click on the "roll" button to roll the die and it will display the side you got.</li>
+                    <li>The number displayed gets added to your total score and the first player to 21 wins</li>
+                    <li>However if you roll a "1" you automatically lose</li>
+                    <li>A couple of handy shortcuts: press spacebar to start a new game and enter to submit number of players</li>
+                    <li>Finally, have fun!</li>
+                </ul></p>
+
+            </div>
+            
+        </div>
+        <div id="game-field">
+           <!-- Made some initial divs to help with organisation using flexbox -->
+               <div id="player-1" class="player playing">
+                <h3>Player 1</h3>
+                <p class="score">0</p>
+                <div class="dice-image">
+
+                </div>
+                <button type="button" onclick="roll()" class="roll-button">
+                    Roll
+                </button>
+
+            </div>
+            <div id="player-2" class="player playing" >
+                    <h3>Player 2</h3>
+                    <p class="score">0</p>
+                    <div class="dice-image">
+    
+                    </div>
+                    <button type="button" onclick="roll()" class="roll-button">
+                        Roll
+                    </button>
+    
+                </div>
+                <div id="player-3" class="player playing">
+                    <h3>Player 2</h3>
+                    <p class="score">0</p>
+                    <div class="dice-image">
+    
+                    </div>
+                    <button type="button" onclick="roll()" class="roll-button">
+                        Roll
+                    </button>
+    
+                </div>
+                <div id="player-4" class="player playing">
+                    <h3>Player 2</h3>
+                    <p class="score">0</p>
+                    <div class="dice-image">
+    
+                    </div>
+                    <button type="button" onclick="roll()" class="roll-button">
+                        Roll
+                    </button>
+    
+                </div>
+
+        </div>
+
+    </div>
+ 
+
+    
+<script src="./app.js"></script>
+</body>
+</html>
