@@ -40,11 +40,6 @@ body {
     display: block;
 }
 
-.players{
+.not-playing{
     display: none;
 }
-/*
-.playing {
-    display: block;
-}
-*/
