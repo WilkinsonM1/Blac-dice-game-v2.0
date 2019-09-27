@@ -5,7 +5,7 @@ let gameField = document.getElementById("game-field")
 let players = document.getElementsByClassName("player")
 
 let turn = 1
-let player = document.getElementById(`player-${turn}`)
+
 let rollBtn = document.getElementById(`roll-${turn}`)
 
 // let playerScore = document.getElementById(`score-${turn}`)
@@ -94,6 +94,7 @@ const roll = () => {
         //this sets the turn back to 1 after the last player plays his turn and I've declared the score div inside a variable which fixes a bug when the turn is greater than player number.
         turn = 1
         let playerScore = document.getElementById(`score-${turn}`)
+        let player = document.getElementById(`player-${turn}`)
         
       
         playerScore.innerHTML =   random+1 + Number(playerScore.innerHTML)
@@ -118,6 +119,7 @@ const roll = () => {
 
     } else {
         let playerScore = document.getElementById(`score-${turn}`)
+        let player = document.getElementById(`player-${turn}`)
         playerScore.innerHTML =  random+1+ Number(playerScore.innerHTML)
         console.log(playerScore)
         turn = turn + 1
