@@ -99,6 +99,10 @@ const roll = () => {
         
        
         enableBtn()
+        if(playerScore.innerHTML >= 21){
+            alert(`player-${turn-1} has won!`)
+            gameStart()
+        }
         console.log(turn)
     } else {
         let playerScore = document.getElementById(`score-${turn}`)
@@ -109,6 +113,10 @@ const roll = () => {
         
        
         enableBtn()
+        if(playerScore.innerHTML >= 21){
+            alert(`player-${turn-1} has won!`)
+            gameStart()
+        }
         console.log(turn)
     }
    
@@ -125,6 +133,8 @@ const enableBtn = () => {
     }
 
 }
+
+
 
 
 
