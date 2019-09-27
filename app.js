@@ -5,7 +5,11 @@ let gameField = document.getElementById("game-field")
 let players = document.getElementsByClassName("player")
 let turn = 1
 let rollBtn = document.getElementById(`roll-${turn}`)
-let playerScore = document.getElementById(`score-${turn}`)
+
+// let playerScore = document.getElementById(`score-${turn}`)
+// let playerScore2 = document.getElementById(`score-2`)
+// let playerScore3 = document.getElementById(`score-3`)
+// let playerScore4 = document.getElementById(`score-4`)
 
 
 
@@ -65,40 +69,51 @@ submit()
 
 const roll = () => {
 
-            
+    
     let random = Math.floor(Math.random()*6)
     let images = [`dice1.png`, `dice2.png`,`dice3.png`, `dice4.png`,`dice5.png`, `dice6.png` ]
-    playerScore.innerHTML = random+1+Number(playerScore.innerHTML)
-    
+    // let playerScore = [document.getElementById(`score-1`), document.getElementById(`score-2`), document.getElementById(`score-3`), document.getElementById(`score-4`)]
+   
     for(i=1; i <= playerNumber.value; i++){
         if(turn <= playerNumber.value){
-    let diceImage = document.getElementById(`player-${turn}-die`)
-    diceImage.src  = `./img/${images[random]}`
-    
-    console.log(random)
-    console.log(Number(playerScore.innerHTML))
-  
-    
-    
-   
-   
-    
+        let diceImage = document.getElementById(`player-${turn}-die`)
+        diceImage.src  = `./img/${images[random]}`
+        
         }else {
             turn = 1
             let diceImage = document.getElementById(`player-${turn}-die`)
-    diceImage.src  = `./img/${images[random]}`
+        diceImage.src  = `./img/${images[random]}`
    
     
         }
     }
-  
-    turn++
+    // playerScore[turn].innerHTML = random+1 + Number(playerScore[turn].innerHTML)
+    if(turn > playerNumber.value){
+        turn = 1
+        let playerScore = document.getElementById(`score-${turn}`)
+        playerScore.innerHTML =   random+1 + Number(playerScore.innerHTML)
+        console.log(playerScore.innerHTML)
+        turn = turn + 1
+       
+        
+       
+        enableBtn()
+        console.log(turn)
+    } else {
+        let playerScore = document.getElementById(`score-${turn}`)
+        playerScore.innerHTML =  random+1+ Number(playerScore.innerHTML)
+        console.log(playerScore)
+        turn = turn + 1
+        
+        
+       
+        enableBtn()
+        console.log(turn)
+    }
    
-    enableBtn()
-    console.log(turn)
 }
 
-
+//this enables the player's roll button who's turn it is and disables the previous player's button.
 const enableBtn = () => {
     if(turn <= playerNumber.value){
     document.getElementById(`roll-${turn}`).disabled = false;
