@@ -89,6 +89,7 @@ const roll = () => {
     }
     // playerScore[turn].innerHTML = random+1 + Number(playerScore[turn].innerHTML)
     if(turn > playerNumber.value){
+        //this sets the turn back to 1 after the last player plays his turn and I've declared the score div inside a variable which fixes a bug when the turn is greater than player number.
         turn = 1
         let playerScore = document.getElementById(`score-${turn}`)
         playerScore.innerHTML =   random+1 + Number(playerScore.innerHTML)
@@ -125,9 +126,6 @@ const enableBtn = () => {
 
 }
 
-// const score = () => {
-//       playerScore.innerHTML = random+1 +Number(playerScore.innerHTML)
-// }
 
 
 
@@ -135,4 +133,3 @@ const enableBtn = () => {
 
 
 
-// // rollBtn.addEventListener("click", roll)
