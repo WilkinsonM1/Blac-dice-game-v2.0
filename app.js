@@ -3,7 +3,9 @@ let inputContainer = document.getElementById("input-container")
 let playerNumber = document.getElementById("player-number")
 let gameField = document.getElementById("game-field")
 let players = document.getElementsByClassName("player")
+
 let turn = 1
+let player = document.getElementById(`player-${turn}`)
 let rollBtn = document.getElementById(`roll-${turn}`)
 
 // let playerScore = document.getElementById(`score-${turn}`)
@@ -92,31 +94,48 @@ const roll = () => {
         //this sets the turn back to 1 after the last player plays his turn and I've declared the score div inside a variable which fixes a bug when the turn is greater than player number.
         turn = 1
         let playerScore = document.getElementById(`score-${turn}`)
+        
+      
         playerScore.innerHTML =   random+1 + Number(playerScore.innerHTML)
-        console.log(playerScore.innerHTML)
+        
+        
+
         turn = turn + 1
        
-        
+       setTimeout(()=>{if(random == 0){
+        alert(`player-${turn-1} has lost!`)
+        player.className = "loser"
+    }}, 500) 
        
         enableBtn()
-        if(playerScore.innerHTML >= 21){
-            alert(`player-${turn-1} has won!`)
-            gameStart()
-        }
+        setTimeout(()=>{
+            if(playerScore.innerHTML >= 21){
+                alert(`player-${turn-1} has won!`)
+                gameStart()
+            }
+        }, 500)
         console.log(turn)
+
     } else {
         let playerScore = document.getElementById(`score-${turn}`)
         playerScore.innerHTML =  random+1+ Number(playerScore.innerHTML)
         console.log(playerScore)
         turn = turn + 1
         
-        
-       
+        //makes the alert pop up with a slight delay to improve user experience
+        setTimeout(()=>{if(random == 0){
+            alert(`player-${turn-1} has lost!`)
+            console.log(player)
+            player.className = "loser"
+        }}, 500) 
         enableBtn()
-        if(playerScore.innerHTML >= 21){
-            alert(`player-${turn-1} has won!`)
-            gameStart()
-        }
+        //alert pops up when a player's score reaches 21
+        setTimeout(()=>{
+            if(playerScore.innerHTML >= 21){
+                alert(`player-${turn-1} has won!`)
+                gameStart()
+            }
+        }, 500)
         console.log(turn)
     }
    
