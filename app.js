@@ -8,6 +8,10 @@ let turn = 1
 
 let rollBtn = document.getElementById(`roll-${turn}`)
 
+let playerArr = [document.getElementById('player-1'), document.getElementById('player-2'), document.getElementById('player-3'), document.getElementById('player-4')]
+
+console.log(playerArr)
+
 // let playerScore = document.getElementById(`score-${turn}`)
 // let playerScore2 = document.getElementById(`score-2`)
 // let playerScore3 = document.getElementById(`score-3`)
@@ -40,8 +44,9 @@ playerNumber.addEventListener("click", () => {
 
 //function for the submit button which makes the input disappear once submitted and makes the inputted number of players appear in the game field
 const submit = () => {
-    if(playerNumber.value > 0 && playerNumber.value <= 4){
 
+    if(playerNumber.value > 0 && playerNumber.value <= 4){
+      
         
     inputContainer.style.display = "none";
 
@@ -53,7 +58,7 @@ const submit = () => {
         
         
     }
-
+   
 
     } else if(playerNumber.value > 4){playerNumber.value = "Number less than 5"}
     
@@ -106,6 +111,7 @@ const roll = () => {
        setTimeout(()=>{if(random == 0){
         alert(`player-${turn-1} has lost!`)
         player.className = "loser"
+       
     }}, 500) 
        
         enableBtn()
@@ -129,6 +135,7 @@ const roll = () => {
             alert(`player-${turn-1} has lost!`)
             console.log(player)
             player.className = "loser"
+           
         }}, 500) 
         enableBtn()
         //alert pops up when a player's score reaches 21
