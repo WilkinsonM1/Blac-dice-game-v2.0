@@ -8,9 +8,9 @@ let turn = 1
 
 let rollBtn = document.getElementById(`roll-${turn}`)
 
-let playerArr = [document.getElementById('player-1'), document.getElementById('player-2'), document.getElementById('player-3'), document.getElementById('player-4')]
+// let playerArr = [document.getElementById('player-1'), document.getElementById('player-2'), document.getElementById('player-3'), document.getElementById('player-4')]
 
-console.log(playerArr)
+// console.log(playerArr)
 
 // let playerScore = document.getElementById(`score-${turn}`)
 // let playerScore2 = document.getElementById(`score-2`)
@@ -111,6 +111,7 @@ const roll = () => {
        setTimeout(()=>{if(random == 0){
         alert(`player-${turn-1} has lost!`)
         player.className = "loser"
+        player.style.display= 'none'
        
     }}, 500) 
        
@@ -135,6 +136,7 @@ const roll = () => {
             alert(`player-${turn-1} has lost!`)
             console.log(player)
             player.className = "loser"
+            player.style.display= 'none'
            
         }}, 500) 
         enableBtn()
